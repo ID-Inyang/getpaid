@@ -18,5 +18,8 @@
     "prisma": "8.0.0-rc.12",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
+  },
+  "scripts": {
+    "postinstall": "prisma skills sync || exit 0"
   }
 }
