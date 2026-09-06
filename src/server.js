@@ -1,5 +1,11 @@
 import express from 'express';
 import chalk from 'chalk';
+import { config } from 'dotenv';
+
+// Load environment variables
+config();
+
+// Import routes
 import movieRoutes from './routes/movieRoutes.js';
 
 const app = express();
