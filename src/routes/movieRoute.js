@@ -1,10 +1,29 @@
 import express from "express"
+import { httpUrl } from "zod/mini"
 
 const router = express.Router()
 
-router.get("/hello", (req, res) => {
+router.get("/", (req, res) => {
     res.json({
-        message: "hello"
+        httpMethod: "get"
+    })
+})
+
+router.post("/", (req, res) => {
+    res.json({
+        httpMethod: "post"
+    })
+})
+
+router.put("/", (req, res) => {
+    res.json({
+        httpMethod: "put"
+    })
+})
+
+router.delete("/", (req, res) => {
+    res.json({
+        httpMethod: "delete"
     })
 })
 

@@ -9,9 +9,6 @@ const app = express();
 // API Routes
 app.use("/movies", movieRoutes)
 
-app.get("/hello", (req, res) => {
-    res.json({message: "Hello World!"})
-});
 
 const PORT = 5002;
 
