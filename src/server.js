@@ -1,8 +1,8 @@
-const { default: chalk } = require('chalk');
-const express = require('express')
+import chalk from "chalk";
+import express from "express"
 
 // Import Routes
-import movieRoutes from './routes/movieRoute'
+import movieRoutes from './routes/movieRoute.js';
 
 const app = express();
 
