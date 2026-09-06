@@ -1,7 +1,13 @@
 const { default: chalk } = require('chalk');
 const express = require('express')
 
+// Import Routes
+import movieRoutes from './routes/movieRoute'
+
 const app = express();
+
+// API Routes
+app.use("/movies", movieRoutes)
 
 app.get("/hello", (req, res) => {
     res.json({message: "Hello World!"})
