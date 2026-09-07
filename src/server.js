@@ -2,20 +2,29 @@ import express from 'express';
 import chalk from 'chalk';
 import { config } from 'dotenv';
 
+import { connectDB, disconnectDB } from './config/db.js';
+
 // Load environment variables
 config();
-connectDB();
+connectDB(); 
 
 // Import routes
 import movieRoutes from './routes/movieRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 const app = express();
 const PORT = 3000;
 
+// Middleware to parse JSON requests
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Use routes
 app.use('/movies', movieRoutes);
+app.use('/auth', authRoutes);
 
 app.listen(PORT, () => {
-    console.log(chalk.green(`Server is running on http://localhost:${PORT}`));
+    console.log(chalk.bgBlueBright(` Server is running on http://localhost:${PORT} `));
 });
 
 // Handle unhandled promise rejections (e.g., database connection issues)
