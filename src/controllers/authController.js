@@ -39,7 +39,8 @@ const register = async (req, res) => {
                 id: user.id,
                 name: name,
                 email: email
-            }
+            },
+            token
         }
     })
 }
@@ -91,4 +92,4 @@ const logout = async (req, res) => {
     })
 }
 
-export { register, login, logout }; 
+export { register, login, logout };

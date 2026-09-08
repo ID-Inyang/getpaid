@@ -30,6 +30,7 @@ model Movie {
   id          String      @id @default(uuid())
   title       String
   overview    String?
+  runtime     Int?
   releaseYear Int
   genres      String[]    @default([])
   posterUrl   String?
