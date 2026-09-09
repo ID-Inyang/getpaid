@@ -11,6 +11,7 @@ connectDB();
 // Import routes
 import movieRoutes from './routes/movieRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import watchlistRoutes from './routes/watchlistRoutes.js'
 
 const app = express();
 const PORT = 3000;
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 // Use routes
 app.use('/movies', movieRoutes);
 app.use('/auth', authRoutes);
+app.use('/watchlist', watchlistRoutes);
 
 app.listen(PORT, () => {
     console.log(chalk.bgBlueBright(` Server is running on http://localhost:${PORT} `));
