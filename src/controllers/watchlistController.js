@@ -1,4 +1,4 @@
-import { prisma } from "../config/db"
+import { prisma } from "../config/db.js";
 
 const addToWatchlist = async (req, res) => {
     const { movieId, status, rating, notes, userId } = req.body
@@ -21,7 +21,7 @@ const addToWatchlist = async (req, res) => {
         },
     })
 
-    if (!existingInWatchlist) {
+    if (existingInWatchlist) {
         return res.status(400).json({ error: "Movie already in the watchlist" });
     }
 
