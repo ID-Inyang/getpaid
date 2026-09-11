@@ -25,10 +25,9 @@ app.use('/movies', movieRoutes);
 app.use('/auth', authRoutes);
 app.use('/watchlist', watchlistRoutes);
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(chalk.bgBlueBright(` Server is running on http://localhost:${PORT} `));
 });
-
 // Handle unhandled promise rejections (e.g., database connection issues)
 process.on('unhandledRejection', (reason, promise) => {
     console.error(chalk.red(`Unhandled Rejection at: ${promise}, reason: ${reason.message}`));

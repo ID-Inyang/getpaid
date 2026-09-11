@@ -1,0 +1,83 @@
+$ pnpm dev
+$ nodemon src/server.js
+[nodemon] 3.1.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node src/server.js`
+DATABASE_URL at adapter creation: string present
+◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+DB connected via Prisma
+ Server is running on http://localhost:3000 
+(node:15936) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+prisma:query SELECT "public"."User"."id", "public"."User"."name", "public"."User"."email", "public"."User"."password", "public"."User"."createdAt" FROM "public"."User" WHERE ("public"."User"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Movie"."id", "public"."Movie"."title", "public"."Movie"."overview", "public"."Movie"."releaseYear", "public"."Movie"."genres", "public"."Movie"."posterUrl", "public"."Movie"."createdBy", "public"."Movie"."createdAt" FROM "public"."Movie" WHERE ("public"."Movie"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+prisma:error 
+Invalid `prisma.watchlist.findUnique()` invocation:
+
+{
+  where: {
+    userId_movieId: {
+    ~~~~~~~~~~~~~~
+      userId: "87b8dca6-7fb3-40de-9af5-b36470f4b2da",
+      movieId: "0e2118ed-243a-4370-8841-c5b679fe959a"
+    },
+?   id?: String,
+?   AND?: WatchlistWhereInput | WatchlistWhereInput[],
+?   OR?: WatchlistWhereInput[],
+?   NOT?: WatchlistWhereInput | WatchlistWhereInput[],
+?   userId?: StringFilter | String,
+?   movieId?: StringFilter | String,
+?   status?: EnumWatchlistStatusFilter | WatchlistStatus,
+?   rating?: IntNullableFilter | Int | Null,
+?   notes?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   user?: UserScalarRelationFilter | UserWhereInput,
+?   movie?: MovieScalarRelationFilter | MovieWhereInput
+  }
+}
+
+Unknown argument `userId_movieId`. Available options are marked with ?.
+PrismaClientValidationError: 
+Invalid `prisma.watchlist.findUnique()` invocation:
+
+{
+  where: {
+    userId_movieId: {
+    ~~~~~~~~~~~~~~
+      userId: "87b8dca6-7fb3-40de-9af5-b36470f4b2da",
+      movieId: "0e2118ed-243a-4370-8841-c5b679fe959a"
+    },
+?   id?: String,
+?   AND?: WatchlistWhereInput | WatchlistWhereInput[],
+?   OR?: WatchlistWhereInput[],
+?   NOT?: WatchlistWhereInput | WatchlistWhereInput[],
+?   userId?: StringFilter | String,
+?   movieId?: StringFilter | String,
+?   status?: EnumWatchlistStatusFilter | WatchlistStatus,
+?   rating?: IntNullableFilter | Int | Null,
+?   notes?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   user?: UserScalarRelationFilter | UserWhereInput,
+?   movie?: MovieScalarRelationFilter | MovieWhereInput
+  }
+}
+
+Unknown argument `userId_movieId`. Available options are marked with ?.
+    at Fr (C:\Users\User1\Desktop\getpaid\node_modules\.pnpm\@prisma+client@7.10.0_prism_10d3a8d1cb553d36d166f2def6ca7ec7\node_modules\@prisma\client\runtime\client.js:10:1374)
+    at vn.handleRequestError (C:\Users\User1\Desktop\getpaid\node_modules\.pnpm\@prisma+client@7.10.0_prism_10d3a8d1cb553d36d166f2def6ca7ec7\node_modules\@prisma\client\runtime\client.js:65:8280)
+    at vn.handleAndLogRequestError (C:\Users\User1\Desktop\getpaid\node_modules\.pnpm\@prisma+client@7.10.0_prism_10d3a8d1cb553d36d166f2def6ca7ec7\node_modules\@prisma\client\runtime\client.js:65:7932)
+    at vn.request (C:\Users\User1\Desktop\getpaid\node_modules\.pnpm\@prisma+client@7.10.0_prism_10d3a8d1cb553d36d166f2def6ca7ec7\node_modules\@prisma\client\runtime\client.js:65:7639)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async a (C:\Users\User1\Desktop\getpaid\node_modules\.pnpm\@prisma+client@7.10.0_prism_10d3a8d1cb553d36d166f2def6ca7ec7\node_modules\@prisma\client\runtime\client.js:99:6935)
+    at async addToWatchlist (file:///C:/Users/User1/Desktop/getpaid/src/controllers/watchlistController.js:16:33)
