@@ -1,3 +1,23 @@
+$ pnpm prisma generate
+pnpm prisma migrate dev --name watchlist_user_movie_unique
+Loaded Prisma config from prisma7.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+✔ Generated Prisma Client (v7.10.0) to .\generated\prisma in 1.11s
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+
+Loaded Prisma config from prisma7.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-purple-shape-a5u8zikj-pooler.us-east-2.aws.neon.tech"
+
+Already in sync, no schema change or pending migration was found.
+
+
+User1@DESKTOP-K1PF6AU MINGW64 ~/Desktop/getpaid (main)
 $ pnpm dev
 $ nodemon src/server.js
 [nodemon] 3.1.14
@@ -6,10 +26,17 @@ $ nodemon src/server.js
 [nodemon] watching extensions: js,mjs,cjs,json
 [nodemon] starting `node src/server.js`
 DATABASE_URL at adapter creation: string present
-◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
 DB connected via Prisma
  Server is running on http://localhost:3000 
-(node:15936) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+[nodemon] clean exit - waiting for changes before restart
+[nodemon] restarting due to changes...
+[nodemon] starting `node src/server.js`
+DATABASE_URL at adapter creation: string present
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+DB connected via Prisma
+ Server is running on http://localhost:3000 
+(node:5464) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
 In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
 
 To prepare for this change:
@@ -18,7 +45,6 @@ To prepare for this change:
 
 See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
 (Use `node --trace-warnings ...` to show where the warning was created)
-prisma:query SELECT "public"."User"."id", "public"."User"."name", "public"."User"."email", "public"."User"."password", "public"."User"."createdAt" FROM "public"."User" WHERE ("public"."User"."email" = $1 AND 1=1) LIMIT $2 OFFSET $3
 prisma:query SELECT "public"."Movie"."id", "public"."Movie"."title", "public"."Movie"."overview", "public"."Movie"."releaseYear", "public"."Movie"."genres", "public"."Movie"."posterUrl", "public"."Movie"."createdBy", "public"."Movie"."createdAt" FROM "public"."Movie" WHERE ("public"."Movie"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
 prisma:error 
 Invalid `prisma.watchlist.findUnique()` invocation:
