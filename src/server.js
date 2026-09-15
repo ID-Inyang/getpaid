@@ -26,7 +26,7 @@ app.use('/auth', authRoutes);
 app.use('/watchlist', watchlistRoutes);
 
 const server = app.listen(PORT, () => {
-    console.log(chalk.bgBlueBright(` Server is running on http://localhost:${PORT} `));
+    console.log(chalk.bgBlueBright(`\n Server is running on http://localhost:${PORT} \n`));
 });
 // Handle unhandled promise rejections (e.g., database connection issues)
 process.on('unhandledRejection', (reason, promise) => {
